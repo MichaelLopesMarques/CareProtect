@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "type": "CHECK_MANUAL_DOCTOR",
+    "doctor": {
+      "name": "Dr. Max Musterarzt",
+      "institute": "Hausarztpraxis Musterarzt",
+      "address": "Körnerstraße 43, 12157 Berlin",
+      "email": "max@example.com",
+      "speciality": "Allgemeinmedizin"
+    }
+  },
+  {
+    "id": "2",
+    "type": "DIGITIZE_SCANNED_FORM",
+    "form": "base64pdfdata"
+  }
+]

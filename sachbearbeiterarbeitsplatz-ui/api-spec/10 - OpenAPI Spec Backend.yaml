@@ -1,0 +1,201 @@
+openapi: 3.0.3
+info:
+  title: Sachbearbeiterarbeitsplatz Backend API
+  version: 1.0.0
+tags:
+  - name: Tasks
+    description: Handling of tasks
+  - name: Doctor Search
+    description: Search Endpoint on our doctors database
+paths:
+  /tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Get all currently open tasks
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Task"
+  /tasks/{taskId}:
+    put:
+      tags:
+        - Tasks
+      summary: Submit a task for completion
+      parameters:
+        - in: path
+          name: taskId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: ID of the task to close
+      responses:
+        "201":
+          description: Successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TaskSubmission"
+            examples:
+              CheckManualDoctorTaskSubmission:
+                summary: Submission of a manually checked doctor with corrected data
+                value:
+                  id: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                  type: "CHECK_MANUAL_DOCTOR"
+                  doctor:
+                    name: "Dr. Maximilian Musterarzt"
+                    institute: "Hausarztpraxis Musterarzt und Kollegen"
+                    address: "Körnerstraße 43, 12157 Berlin"
+                    email: "max_musterarzt@googlemail.com"
+                    speciality: "Allgemeinmedizin"
+              DigitizeScannedFormTaskSubmission:
+                summary: Submission of data from a scanned form
+                value:
+                  id: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                  type: "DIGITIZE_SCANNED_FORM"
+                  doctors:
+                    - name: "Dr. Maximilian Musterarzt"
+                      institute: "Hausarztpraxis Musterarzt und Kollegen"
+                      address: "Körnerstraße 43, 12157 Berlin"
+                      email: "max_musterarzt@googlemail.com"
+                      speciality: "Allgemeinmedizin"
+                  claimant:
+                    name: "Erika Mustergeschädigte"
+                    address: "Großbeerenstraße 2-10, 12107 Berlin"
+                    email: "erika_flowerpower99@arcor.de"
+                  damageNumber: "SCH0815-12345"
+  /doctors/search:
+    get:
+      tags:
+        - Doctor Search
+      summary: Freetextsearch a doctor
+      parameters:
+        - in: query
+          name: q
+          schema:
+            type: string
+            example: "Musterarzt"
+          required: true
+          description: String to search for in the doctors db
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Doctor"
+components:
+  schemas:
+    Task:
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          CHECK_MANUAL_DOCTOR: "#/components/schemas/CheckManualDoctorTask"
+          DIGITIZE_SCANNED_FORM: "#/components/schemas/DigitizeScannedFormTask"
+      oneOf:
+        - $ref: "#/components/schemas/CheckManualDoctorTask"
+        - $ref: "#/components/schemas/DigitizeScannedFormTask"
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum: ["CHECK_MANUAL_DOCTOR", "DIGITIZE_SCANNED_FORM"]
+    CheckManualDoctorTask:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "CHECK_MANUAL_DOCTOR"
+        doctor:
+          $ref: "#/components/schemas/Doctor"
+    DigitizeScannedFormTask:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "DIGITIZE_SCANNED_FORM"
+        form:
+          type: string
+          format: base64
+          example: "<pdf as base64>"
+    TaskSubmission:
+      type: object
+      discriminator:
+        propertyName: type
+        mapping:
+          CHECK_MANUAL_DOCTOR: "#/components/schemas/CheckManualDoctorTaskSubmission"
+          DIGITIZE_SCANNED_FORM: "#/components/schemas/DigitizeScannedFormTaskSubmission"
+      oneOf:
+        - $ref: "#/components/schemas/CheckManualDoctorTaskSubmission"
+        - $ref: "#/components/schemas/DigitizeScannedFormTaskSubmission"
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum: ["CHECK_MANUAL_DOCTOR", "DIGITIZE_SCANNED_FORM"]
+    CheckManualDoctorTaskSubmission:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "CHECK_MANUAL_DOCTOR"
+        doctor:
+          $ref: "#/components/schemas/Doctor"
+    DigitizeScannedFormTaskSubmission:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "DIGITIZE_SCANNED_FORM"
+        doctors:
+          type: array
+          items:
+            $ref: "#/components/schemas/Doctor"
+        claimant:
+          type: object
+          properties:
+            name:
+              type: string
+              example: "Erika Mustergeschädigte"
+            address:
+              type: string
+              example: "Großbeerenstraße 2-10, 12107 Berlin"
+            email:
+              type: string
+              example: "erika_flowerpower99@arcor.de"
+        damageNumber:
+          type: string
+          example: "SCH0815-12345"
+    Doctor:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Dr. Max Musterahrzt"
+        institute:
+          type: string
+          example: "Hausarztpraxis Musterarzt und Kollegen"
+        address:
+          type: string
+          example: "Körnerstraße 43, 12157 Berlin"
+        email:
+          type: string
+          example: "max_musterarzt@googlemail.com"
+        speciality:
+          type: string
+          example: "Allgemeinmedizin"
+          
