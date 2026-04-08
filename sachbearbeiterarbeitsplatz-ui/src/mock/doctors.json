@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Dr. Max Musterarzt",
+    "institute": "Hausarztpraxis Allgemeinarzt",
+    "address": "Ärzteweg 7, 12345 Berlin",
+    "email": "max.musterarzt@example.de",
+    "speciality": "Allgemeinmedizin"
+  },
+  {
+    "name": "Dr. Med. Sabine Musterfrau",
+    "institute": "Hausarztpraxis Musterarzt",
+    "address": "Körnerstraße 43, 12157 Berlin",
+    "email": "sabine.musterfrau@example.de",
+    "speciality": "Orthopädie"
+  },
+  {
+    "name": "Dr. Peter Hoffmann",
+    "institute": "Klinik Hoffmann",
+    "address": "Hauptstraße 22, 50670 Köln",
+    "email": "p.hoffmann@example.de",
+    "speciality": "Neurologie"
+  }
+]

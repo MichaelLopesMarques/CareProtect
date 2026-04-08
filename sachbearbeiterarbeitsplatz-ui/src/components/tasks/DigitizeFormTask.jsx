@@ -11,20 +11,21 @@ function DigitizeFormTask() {
         <main>
         <h2>Formular digitalisieren</h2>
             <form onSubmit={handleSubmit}>
-                <input name="doctorName" type="text" placeholder="Name des Arztes"></input>
-                <input name="doctorInstitute" type="text" placeholder="Medizinische Einrichtung"></input>
-                <input name="doctorAddress" type="text" placeholder="Adresse der Einrichtung"></input>
-                <input name="doctorEmail" type="email" placeholder="E-Mail"></input>
-                <input name="doctorSpeciality" type="text" placeholder="Fachrichtung"></input>
+                <input name="doctorName" type="text" placeholder="Name des Arztes" />
+                <input name="doctorInstitute" type="text" placeholder="Medizinische Einrichtung" />
+                <input name="doctorAddress" type="text" placeholder="Adresse der Einrichtung" />
+                <input name="doctorEmail" type="email" placeholder="E-Mail" />
+                <input name="doctorSpeciality" type="text" placeholder="Fachrichtung" />
 
-                <input name="clientName" type="text" placeholder="Name des Versicherten"></input>
-                <input name="clientAddress" type="text" placeholder="Adresse des Versicherten"></input>
-                <input name="clientEmail" type="email" placeholder="Email des Versicherten"></input>
-                <input name="clientDamageNumber" type="text" placeholder="Sachadensnummer des Versicherten"></input>
-                
+                <input name="clientName" type="text" placeholder="Name des Versicherten" />
+                <input name="clientAddress" type="text" placeholder="Adresse des Versicherten" />
+                <input name="clientEmail" type="email" placeholder="Email des Versicherten" />
+                <input name="clientDamageNumber" type="text" placeholder="Sachadensnummer des Versicherten" />
+
                 <button type="submit">Senden</button>
             </form>
         </main>
     )
 }
+
 export default DigitizeFormTask;

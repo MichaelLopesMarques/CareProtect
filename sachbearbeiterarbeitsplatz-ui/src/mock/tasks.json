@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "type": "CHECK_MANUAL_DOCTOR",
     "doctor": {
       "name": "Dr. Max Musterarzt",
@@ -11,8 +11,8 @@
     }
   },
   {
-    "id": "2",
+    "id": "b2295f64-5717-4562-b3fc-2c963f66afa6",
     "type": "DIGITIZE_SCANNED_FORM",
-    "form": "base64pdfdata"
+    "form": "/Erika_Mustergeschädigte.pdf"
   }
 ]
