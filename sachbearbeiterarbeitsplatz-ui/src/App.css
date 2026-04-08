@@ -62,3 +62,22 @@
   color: #888;
   font-style: italic;
 }
+
+.download-btn {
+  /* Macht aus dem Text-Link einen Block, der wie ein Button aussieht */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none; /* Entfernt den Unterstrich */
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+  color: white; /* Sicherstellen, dass Text weiß bleibt */
+}
