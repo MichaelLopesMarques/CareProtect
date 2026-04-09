@@ -3,7 +3,7 @@ import DoctorSearch from "../DoctorSearch";
 
 function CheckDoctorTask({ task, taskComplete }) {
     const [searchTerm, setSearchTerm] = useState("");
-    const [editedDoctor, setEditedDoctor] = useState(task.doctor);
+    const [editedDoctor, setEditedDoctor] = useState(task?.doctor || {});
     
     const confirmDoctor = () => {
         console.log("Arzt bestätigt:", editedDoctor);

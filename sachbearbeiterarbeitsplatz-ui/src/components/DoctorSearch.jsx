@@ -6,7 +6,7 @@ export default function DoctorSearch({ searchTerm, setSearchTerm }) {
     const filterDoctors = doctors.filter((doctor) => doctor.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
-        <div className="doctorSearch">
+        <div  class="rounded-md ">
             <input
                 type="text"
                 className="doctorSearch-input"
