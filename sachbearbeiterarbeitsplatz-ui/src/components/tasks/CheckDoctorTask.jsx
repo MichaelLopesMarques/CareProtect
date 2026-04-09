@@ -8,11 +8,13 @@ function CheckDoctorTask({ task, taskComplete }) {
     const confirmDoctor = () => {
         console.log("Arzt bestätigt:", editedDoctor);
         taskComplete(task.id);
+        alert("Arzt wurde erfolgreich bestätigt!");
     };
 
     const saveCorrection = () => {
         console.log("Arzt korrigiert:", editedDoctor);
         taskComplete(task.id);
+        alert("Arzt wurde erfolgreich korrigiert!");
     };
 
     const handleChange = (e) => {

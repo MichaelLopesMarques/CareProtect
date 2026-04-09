@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import CheckDoctorTask from "../components/tasks/CheckDoctorTask";
+import { useNavigate } from 'react-router-dom';
 import mockTasks from "../mock/tasks.json"
 
 function CheckDoctorPage(){
+    const navigate = useNavigate();
+
     const task = mockTasks.find(
         (task) => task.type === "CHECK_MANUAL_DOCTOR"
     );
 
     const taskComplete = (taskId) => {
         console.log("Task abgeschlossen:", taskId);
+        navigate('/task');
     };
 
     return(
@@ -19,7 +23,7 @@ function CheckDoctorPage(){
                 </h1>
             </div>
             <div>
-                <CheckDoctorTask task={task}taskComplete={taskComplete} />
+                <CheckDoctorTask task={task} taskComplete={taskComplete} />
             </div>
         </>
     )

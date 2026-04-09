@@ -2,7 +2,7 @@ import { useState } from "react";
 import doctors from "../mock/doctors.json"
 
 export default function DoctorSearch({ searchTerm, setSearchTerm }) {
-    const [selectedDoctor, setSelectedDoctor] = useState(null);
+    const [selectedDoctor, setSelectedDoctor] = useState(null); 
     const filterDoctors = doctors.filter((doctor) => doctor.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
