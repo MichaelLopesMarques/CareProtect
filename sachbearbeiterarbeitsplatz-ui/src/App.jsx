@@ -8,9 +8,16 @@ import Header from "./components/Header";
 import CheckDoctorPage from "./pages/CheckDoctorPage";
 import DigitizeFormPage from "./pages/DigitizeFormPage";
 import TaskDetailPage from "./pages/TaskDetailPage";
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const navigate = useNavigate();
+
+  const handleTaskComplete = (id) => {
+    console.log("Task erledigt:", id);
+    navigate('/task')
+  }
 
   useEffect(() => {
     setTasks(mockTasks);
@@ -29,10 +36,10 @@ function App() {
           <main class='flex-1 overflow-y-auto bg-[#f1f1f1] p-8'>
             <Routes>
               <Route path="/" element={<DashboardPage />} />
-              <Route path="/task" element={<TaskOverviewPage tasks={tasks}/>} />
-              <Route path="/tasks/:taskId" element={<TaskDetailPage tasks={tasks} />} />
-              <Route path="/check-doctor" element={<CheckDoctorPage />} />
-              <Route path="/digitize-form" element={<DigitizeFormPage />} />
+              <Route path="/task" element={<TaskOverviewPage tasks={tasks} />} />
+              <Route path="/tasks/:taskId" element={<TaskDetailPage tasks={tasks} taskComplete={handleTaskComplete} />} />
+              <Route path="/check-doctor" element={<CheckDoctorPage taskComplete={handleTaskComplete}/>} />
+              <Route path="/digitize-form" element={<DigitizeFormPage taskComplete={handleTaskComplete}/>} />
             </Routes>
           </main>
         </div>

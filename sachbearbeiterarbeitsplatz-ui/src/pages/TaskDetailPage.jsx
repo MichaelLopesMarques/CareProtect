@@ -11,7 +11,7 @@ function TaskDetailPage({ tasks, taskComplete }) {
         return <p>Task nicht gefunden</p>;
     }
 
-    if (task.type === "CHECK_MANUAL_DOCTOR") {
+    if (task?.type === "CHECK_MANUAL_DOCTOR") {
         return (
             <CheckDoctorTask
                 task={task}
@@ -20,10 +20,10 @@ function TaskDetailPage({ tasks, taskComplete }) {
         );
     }
 
-    if (task.type === "DIGITIZE_SCANNED_FORM") {
+    if (task?.type === "DIGITIZE_SCANNED_FORM") {
         return (
             <DigitizeFormTask
-                taskId={task.id}
+                task={task}
                 taskComplete={taskComplete}
             />
         );
