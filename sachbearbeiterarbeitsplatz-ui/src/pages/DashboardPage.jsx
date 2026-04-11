@@ -15,23 +15,46 @@ function DashboardPage() {
 
 
     return (
-        <>
+        <main className="max-w-7xl mx-auto p-6">
             <div>
-                <label>Es sind {tasks.length} Tasks noch offen </label>
-                <div className="mt-30px">
-                <h2>Aufgaben-Liste</h2>
-                {tasks.map((task) => (
-                    <TaskList key={task.id} task={task} />
-                ))}
-                <Link to="/task">Task öffnen</Link>
+                <h2 className="text-gray-500"> Willkommen zurück!</h2>
+                <label className="text-gray-500">Es sind {tasks.length} Aufgaben noch offen</label>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+                    
+                    <div className="space-y-6">
+                        <section className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                            <div className="p-4 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                                <h2 className="font-bold text-gray-700 uppercase text-xs tracking-wider">Aufgaben-Liste</h2>
+                                <div className="p-4 space-y-3">
+                                    {tasks.map((task) => (
+                                        <TaskList key={task.id} task={task} />
+                                    ))}
+                                    <div className="pt-4 border-t border-gray-100 flex justify-end">
+                                        <Link 
+                                            to="/task"
+                                            className="text-sm text-blue-600 font-semibold hover:underline">
+                                                Task öffnen
+                                        </Link>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </section>
+                    </div>    
+                </div>
             </div>
-            </div>
-            <p />
-            <div>
-                <h2>Arztverzeichnis</h2>
-                <DoctorSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            </div>
-        </>
+            
+            <aside className="h-full">
+                <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 h-full">
+                    <div>
+                        <h2 className="font-bold text-gray-700 uppercase text-xs tracking-wider mb-4">Arztverzeichnis</h2>
+                        <div className="w-full">
+                            <DoctorSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </main>
     );
 }
 

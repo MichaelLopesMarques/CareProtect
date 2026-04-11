@@ -5,9 +5,9 @@ export default function TaskList({task}){
     };
 
     return (
-        <div className="taskList">
-            <h3>{taskNames[task.type]}</h3>
-            <p>ID: {task.id}</p>
+        <div className="flex items-center justify-between p-4 bg-gray-50 border border-gray-200 rounded-lg hover:bg-white transition-colors group">
+            <h3 className="font-bold text-gray-800 text-sm">{taskNames[task.type]}</h3>
+            <p className="text-[10px] text-gray-400 font-mono uppercase">ID: {task.id}</p>
         </div>
 
     );

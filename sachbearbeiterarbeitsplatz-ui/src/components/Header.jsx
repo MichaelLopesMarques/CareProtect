@@ -21,7 +21,7 @@ export default function Header() {
     
     return (
         <header>
-            <div class="h-16 bg-white border-b border-gray-200 flex items-center px-8 shrink-0">
+            <div className="h-16 bg-white border-b border-gray-200 flex items-center px-8 shrink-0">
                 <h1 className="text-xl font-semibold">{getTitle(pageLocation.pathname)}</h1>
             </div>
         </header>

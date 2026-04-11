@@ -25,15 +25,15 @@ function App() {
 
   return (
     <>
-      <div class='flex h-screen overflow-hidden'>
+      <div className='flex h-screen overflow-hidden'>
         
-        <aside class='px-8 w-72 h-screen bg-white border-r border-gray-200 shrink-0'>
+        <aside className='px-8 w-72 h-screen bg-white border-r border-gray-200 shrink-0'>
           <Sidebar/>
         </aside>
 
-        <div class='flex flex-col flex-1 h-screen overflow-hidden'>
-          <Header class='sticky top-0 flex w-full bg-white border-gray-200 z-99999 dark:border-gray-800 dark:bg-gray-900 xl:border-b'/>
-          <main class='flex-1 overflow-y-auto bg-[#f1f1f1] p-8'>
+        <div className='flex flex-col flex-1 h-screen overflow-hidden'>
+          <Header className='sticky top-0 flex w-full bg-white border-gray-200 z-99999 dark:border-gray-800 dark:bg-gray-900 xl:border-b'/>
+          <main className='flex-1 overflow-y-auto bg-[#f1f1f1] p-8'>
             <Routes>
               <Route path="/" element={<DashboardPage />} />
               <Route path="/task" element={<TaskOverviewPage tasks={tasks} />} />
