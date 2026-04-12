@@ -1,7 +1,14 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function TaskOverviewPage({ tasks }) {
+    // API example:
+    // GET /tasks
+    // fetch("/tasks")
+    //   .then((res) => res.json())
+    //   .then((data) => console.log("Loaded tasks:", data));
+
+    console.log("GET /task", tasks);  
+    
     const taskNames = {
         CHECK_MANUAL_DOCTOR: "Arzt Verifikation",
         DIGITIZE_SCANNED_FORM: "Formular nachtragen"

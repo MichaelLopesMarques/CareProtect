@@ -7,6 +7,27 @@ function CheckDoctorTask({task, taskComplete}) {
     
     const confirmDoctor = () => {
         console.log("Arzt bestätigt:", editedDoctor);
+
+        console.log("PUT /tasks/" + task?.id);
+        console.log({
+            id: task.id,
+            type: task.type,
+            doctor: editedDoctor
+        });
+
+        // API Beispiel:
+        // fetch(`/tasks/${task.id}`, {
+        //   method: "PUT",
+        //   headers: {
+        //      "Content-Type": "application/json"
+        //   },
+        //   body: JSON.stringify({
+        //      id: task.id,
+        //      type: task.type,
+        //      doctor: editedDoctor
+        //   })
+        // });
+
         alert("Arzt wurde erfolgreich bestätigt!");
         taskComplete(task.id);
         
@@ -14,6 +35,27 @@ function CheckDoctorTask({task, taskComplete}) {
 
     const saveCorrection = () => {
         console.log("Arzt korrigiert:", editedDoctor);
+
+        console.log("PUT /tasks/" + task?.id);
+        console.log({
+            id: task.id,
+            type: task.type,
+            doctor: editedDoctor
+        });
+
+        // API Beispiel:
+        // fetch(`/tasks/${task.id}`, {
+        //   method: "PUT",
+        //   headers: {
+        //      "Content-Type": "application/json"
+        //   },
+        //   body: JSON.stringify({
+        //      id: task.id,
+        //      type: task.type,
+        //      doctor: editedDoctor
+        //   })
+        // });
+
         alert("Arzt wurde erfolgreich korrigiert!");
         taskComplete(task.id);
     };

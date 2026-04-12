@@ -1,11 +1,10 @@
-import React from 'react';
 import DigitizeFormTask from '../components/tasks/DigitizeFormTask';
 import mockTasks from "../mock/tasks.json"
 
 export default function DigitizeFormPage({taskComplete}) {
 
     const task = mockTasks.find(
-        (task) => task.type === "CHECK_MANUAL_DOCTOR"
+        (task) => task.type === "DIGITIZE_SCANNED_FORM"
     );
 
     return (

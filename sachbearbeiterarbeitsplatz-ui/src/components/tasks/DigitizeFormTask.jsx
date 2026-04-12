@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function DigitizeFormTask({task, taskComplete, showPDF = true}) {
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,6 +25,16 @@ function DigitizeFormTask({task, taskComplete, showPDF = true}) {
         };
 
         console.log("PUT /tasks/" + task?.id, payload);
+
+        // API Beispiel:
+        // fetch(`/tasks/${task.id}`, {
+        //   method: "PUT",
+        //   headers: {
+        //      "Content-Type": "application/json"
+        //   },
+        //   body: JSON.stringify(task)
+        // });
+
         alert("Formular erfolgreich übermittelt!");
         
         if (task && taskComplete) { 

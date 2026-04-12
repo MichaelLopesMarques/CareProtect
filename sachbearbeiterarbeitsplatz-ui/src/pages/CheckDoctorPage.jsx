@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import CheckDoctorTask from "../components/tasks/CheckDoctorTask";
 import mockTasks from "../mock/tasks.json"
 
