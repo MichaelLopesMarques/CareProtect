@@ -8,7 +8,7 @@ export default function Header() {
             case "/":
                 return "Dashboard";
             case "/task":
-                return "Alle Aufgaben";
+                return "Aufgaben";
             case "/check-doctor":
                 return "Arztverzeichnis";
             case "/digitize-form":

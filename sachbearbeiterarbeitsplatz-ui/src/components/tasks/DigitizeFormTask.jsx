@@ -61,7 +61,7 @@ function DigitizeFormTask({task, taskComplete, showPDF = true}) {
                     <input name="clientEmail" type="email" placeholder="Email des Versicherten" className={inputStyle} required/>
                     <input name="clientDamageNumber" type="text" placeholder="Sachadensnummer des Versicherten" className={inputStyle} required/>
 
-                    <button type="submit" className="mt-6 w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-sm text-sm">
+                    <button type="submit" className="mt-6 w-full bg-[#2C3E50] text-white py-3 rounded-lg font-bold hover:bg-[#3E5871] transition-colors shadow-sm text-sm">
                         Formular abschicken
                     </button>
                 </form>
@@ -83,7 +83,7 @@ function DigitizeFormTask({task, taskComplete, showPDF = true}) {
                     <a
                         href={task.form}
                         download
-                        className="inline-block mt-4 text-xs text-gray-500 hover:text-blue-600 font-semibold underline"
+                        className="inline-block mt-4 text-xs text-cyan-600 hover:text-cyan-700 font-semibold underline"
                     >
                         PDF downloaden
                     </a>

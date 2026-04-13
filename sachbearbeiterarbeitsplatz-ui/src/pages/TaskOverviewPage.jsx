@@ -20,7 +20,7 @@ function TaskOverviewPage({ tasks }) {
                 <section>
                     <div className="flex items-center justify-between mb-4">
                         <h2 className="text-lg font-semibold text-gray-700">Offene Aufgaben</h2>
-                        <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold">
+                        <span className="bg-[#A3B18A]/20 text-cyan-600 px-3 py-1 rounded-full text-xs font-bold">
                             {tasks.length} Gesamt
                         </span>
                     </div>
@@ -48,7 +48,7 @@ function TaskOverviewPage({ tasks }) {
                                 </div>
                                 <div className="absolute bottom-4 right-4">
                                     <Link to={`/tasks/${task.id}`}>
-                                        <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-sm transition-colors flex items-center gap-2">
+                                        <button className="bg-[#2C3E50] hover:bg-[#3E5871] text-white text-sm font-bold py-2 px-4 rounded-lg shadow-sm transition-colors flex items-center gap-2">
                                             Task bearbeiten
                                         </button>
                                     </Link>

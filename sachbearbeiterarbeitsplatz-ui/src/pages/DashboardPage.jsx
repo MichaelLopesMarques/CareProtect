@@ -35,7 +35,7 @@ function DashboardPage() {
                                 <div className="pt-4 border-t border-gray-100 flex justify-end">
                                     <Link 
                                         to="/task"
-                                        className="text-sm text-blue-600 font-semibold hover:underline">
+                                        className="text-sm text-cyan-600 hover:text-cyan-700 font-semibold hover:underline">
                                             Task öffnen
                                     </Link>
                                 </div>

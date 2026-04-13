@@ -27,12 +27,12 @@ function App() {
     <>
       <div className='flex h-screen overflow-hidden'>
         
-        <aside className='px-8 w-72 h-screen bg-white border-r border-gray-200 shrink-0'>
+        <aside className='px-8 w-72 h-screen bg-[#2C3E50] border-r border-gray-200 shrink-0'>
           <Sidebar/>
         </aside>
 
         <div className='flex flex-col flex-1 h-screen overflow-hidden'>
-          <Header className='sticky top-0 flex w-full bg-white border-gray-200 dark:border-gray-800 dark:bg-gray-900 xl:border-b'/>
+          <Header className='sticky top-0 flex w-full bg-white border-gray-200 xl:border-b'/>
           <main className='flex-1 overflow-y-auto bg-[#f1f1f1] p-8'>
             <Routes>
               <Route path="/" element={<DashboardPage />} />

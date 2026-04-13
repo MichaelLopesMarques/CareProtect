@@ -73,8 +73,8 @@ function CheckDoctorTask({task, taskComplete}) {
         <main className="max-w-6xl mx-auto p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Arzt Prüfung</h2>
 
-            <section className="bg-white border border-gray-200 rounded-xl shadow-sm p-5 mb-8 border-l-4 border-l-blue-600">
-                <h3 className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">Angegebener Arzt</h3>
+            <section className="bg-white border border-gray-200 rounded-xl shadow-sm p-5 mb-8 border-l-4 border-l-[#2C3E50]">
+                <h3 className="text-sm font-semibold text-[#3E5871] uppercase tracking-wider mb-3">Angegebener Arzt</h3>
                 <div className="grid grid-cols-2 gap-4">
                     <div>
                         <p className="text-xs text-gray-500 uppercase">Name: </p>
@@ -85,11 +85,13 @@ function CheckDoctorTask({task, taskComplete}) {
                         <p className="font-medium text-gray-900">{editedDoctor.institute}</p>
                     </div>
                 </div>
-                <button 
-                    onClick={confirmDoctor} 
-                    className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
-                        Bestätigen
-                </button>  
+                <div className="mt-auto flex justify-end">
+                    <button 
+                        onClick={confirmDoctor} 
+                        className="bg-[#588157] hover:bg-[#3a5a40] text-white font-bold py-2 px-6 rounded-lg shadow-sm transition-colors flex items-center gap-2">
+                            Bestätigen
+                    </button>
+                </div>  
             </section>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -145,7 +147,7 @@ function CheckDoctorTask({task, taskComplete}) {
 
                         <button 
                             onClick={saveCorrection}
-                            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold shadow-md transition-all active:scale-95">
+                            className="mt-4 bg-[#2C3E50] hover:bg-[#3E5871] text-white py-3 rounded-lg font-bold shadow-md transition-all active:scale-95">
                                 Korrektur speichern
                         </button>
                     </div>
