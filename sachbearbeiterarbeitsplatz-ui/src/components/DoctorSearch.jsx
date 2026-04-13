@@ -3,8 +3,11 @@ import doctors from "../mock/doctors.json"
 
 export default function DoctorSearch({ searchTerm, setSearchTerm }) {
     const [selectedDoctor, setSelectedDoctor] = useState(null); 
+    
+    // Filtert Ärzte anhand des aktuellen Suchtextes
     const filterDoctors = doctors.filter((doctor) => doctor.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
+    // Dropdown nur anzeigen, wenn Text eingegeben wurde
     const isDropdownMenuVisible = searchTerm.length > 0 && selectedDoctor?.name !== searchTerm;
 
     return (

@@ -11,9 +11,13 @@ import TaskDetailPage from "./pages/TaskDetailPage";
 import { useNavigate } from 'react-router-dom';
 
 function App() {
+  // Zentrale Speicherung aller offenen Aufgaben
   const [tasks, setTasks] = useState([]);
+  
   const navigate = useNavigate();
 
+  // Callback wird an Task-Komponenten weitergereicht,
+  // sobald eine Aufgabe abgeschlossen wurde
   const handleTaskComplete = (id) => {
     console.log("Task erledigt:", id);
     navigate('/task')
@@ -33,6 +37,7 @@ function App() {
 
         <div className='flex flex-col flex-1 h-screen overflow-hidden'>
           <Header className='sticky top-0 flex w-full bg-white border-gray-200 xl:border-b'/>
+          
           <main className='flex-1 overflow-y-auto bg-[#f1f1f1] p-8'>
             <Routes>
               <Route path="/" element={<DashboardPage />} />

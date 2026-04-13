@@ -2,9 +2,13 @@ import { useState } from "react";
 import DoctorSearch from "../DoctorSearch";
 
 function CheckDoctorTask({task, taskComplete}) {
+    // Suchtext für die Arztsuche
     const [searchTerm, setSearchTerm] = useState("");
+    
+    // Kopie des Arztdatensatzes zur Bearbeitung
     const [editedDoctor, setEditedDoctor] = useState(task?.doctor || {});
     
+    // Übergibt die Daten an Backend / API
     const confirmDoctor = () => {
         console.log("Arzt bestätigt:", editedDoctor);
 
@@ -33,6 +37,7 @@ function CheckDoctorTask({task, taskComplete}) {
         
     };
 
+    // Übergibt die bearbeiteten Daten an Backend / API
     const saveCorrection = () => {
         console.log("Arzt korrigiert:", editedDoctor);
 

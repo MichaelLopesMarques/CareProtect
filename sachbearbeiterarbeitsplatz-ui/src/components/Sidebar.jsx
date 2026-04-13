@@ -40,7 +40,7 @@ function Sidebar() {
                             <li className="flex flex-col">
                                 <button onClick={() => setIsOpen(!isOpen)} className={linkStyle}>
                                     <img src={Work} alt="" className={iconStyle} />
-                                    <span className={textStyle}>Arbeitsbereiche</span>
+                                    <span className={textStyle}>Arbeitsbereiche ⇓</span>
                                 </button>
                                 {isOpen && (
                                     <div className="overflow-hidden transition-all duration-300 mt-2 ml-4 border-l-2 border-gray-100">

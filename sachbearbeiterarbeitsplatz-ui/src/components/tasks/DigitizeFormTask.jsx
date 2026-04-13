@@ -1,4 +1,5 @@
 function DigitizeFormTask({task, taskComplete, showPDF = true}) {
+    // Verarbeitet das Formular und erstellt den API Payload
     const handleSubmit = (e) => {
         e.preventDefault();
 
