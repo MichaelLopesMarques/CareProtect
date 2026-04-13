@@ -14,5 +14,10 @@
     "id": "b2295f64-5717-4562-b3fc-2c963f66afa6",
     "type": "DIGITIZE_SCANNED_FORM",
     "form": "/Erika_Mustergeschaedigte.pdf"
+  },
+  {
+    "id": "b2295f64-5717-4562-b3fc-2c963f66afa5",
+    "type": "DIGITIZE_SCANNED_FORM",
+    "form": "/Erika_Mustergeschaedigte.pdf"
   }
 ]
